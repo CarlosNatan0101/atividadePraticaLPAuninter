@@ -12,13 +12,20 @@ class Jogo:
 
         pygame.init()
 
-        self.window = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
+        self.window = pygame.display.set_mode(
+            (WIN_WIDTH, WIN_HEIGHT)
+        )
+
         pygame.display.set_caption("Chicken Rush")
 
-        self.menu = Menu(self.window)
+        # FPS
+        self.clock = pygame.time.Clock()
 
+        # telas
+        self.menu = Menu(self.window)
         self.level = Level(self.window)
 
+        # estado atual
         self.state = "MENU"
 
     def run(self):
@@ -27,13 +34,15 @@ class Jogo:
 
             for event in pygame.event.get():
 
+                # fechar
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
 
+                # teclado
                 if event.type == pygame.KEYDOWN:
 
-                    # entrar na fase
+                    # iniciar jogo
                     if event.key == pygame.K_RETURN:
                         self.state = "LEVEL"
 
@@ -42,10 +51,15 @@ class Jogo:
                         pygame.quit()
                         sys.exit()
 
+            # menu
             if self.state == "MENU":
                 self.menu.run()
 
-            if self.state == "LEVEL":
+            # level
+            elif self.state == "LEVEL":
                 self.level.run()
 
             pygame.display.flip()
+
+            # FPS
+            self.clock.tick(60)

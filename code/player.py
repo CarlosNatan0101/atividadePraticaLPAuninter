@@ -6,14 +6,17 @@ class Player:
     def __init__(self):
 
         # imagem
-        self.image = pygame.image.load('./asset/galinha1.png')
+        self.image = pygame.image.load('./asset/galinha1r.png').convert_alpha()
+
+        # tamanho player
+        self.image = pygame.transform.scale(self.image, (90, 90))
 
         # posição
-        self.x = 10
-        self.y = 40
+        self.x = 100
+        self.y = 360
 
         # velocidade
-        self.speed = 0.5
+        self.speed = 1
 
     def move(self):
 

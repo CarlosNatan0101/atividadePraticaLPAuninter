@@ -1,5 +1,5 @@
 
 
 #rectangular background menu
-WIN_WIDTH = 576
-WIN_HEIGHT = 324
+WIN_WIDTH = 960
+WIN_HEIGHT = 540
