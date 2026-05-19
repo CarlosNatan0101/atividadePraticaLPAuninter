@@ -1,5 +1,7 @@
 import pygame
 
+from code.const import WIN_WIDTH
+
 
 class Menu:
     def __init__(self, window):
@@ -10,18 +12,18 @@ class Menu:
         self.rect = self.image.get_rect()
 
 
-        self.title_font = pygame.font.SysFont('Arial', 70, bold=True)
-        self.text_font = pygame.font.SysFont('Arial', 30)
+        self.title_font = pygame.font.SysFont('Arial', 50, bold=True)
+        self.text_font = pygame.font.SysFont('Arial', 18)
 
 
         self.title = self.title_font.render(
             'CHICKEN RUSH',
             True,
-            (255, 255, 255)
+            (255, 140, 0)
         )
 
         self.text = self.text_font.render(
-            'Pressione ENTER para jogar',
+            'Pressione ENTER para jogar ou ESC para sair',
             True,
             (255, 255, 255)
         )
@@ -32,11 +34,8 @@ class Menu:
 
     def run(self):
 
-        # desenha fundo
         self.window.blit(self.image, self.rect)
 
-        # desenha título
-        self.window.blit(self.title, (170, 120))
+        self.window.blit(self.title, (20, 15))
 
-        # desenha texto inferior
-        self.window.blit(self.text, (200, 500))
+        self.window.blit(self.text, (70, 220))
