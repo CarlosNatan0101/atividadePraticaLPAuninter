@@ -6,7 +6,7 @@ class Player:
     def __init__(self):
 
         # imagem
-        self.image = pygame.image.load('./asset/galinha1r.png').convert_alpha()
+        self.image = pygame.image.load('./asset/raposa2r.png').convert_alpha()
 
         # tamanho player
         self.image = pygame.transform.scale(self.image, (90, 90))
