@@ -5,10 +5,6 @@ class Player:
 
     def __init__(self):
 
-        # =========================
-        # ANIMAÇÃO
-        # =========================
-
         self.frames = [
 
             pygame.transform.scale(
@@ -39,16 +35,8 @@ class Player:
 
         self.image = self.frames[self.current_frame]
 
-        # =========================
-        # POSIÇÃO
-        # =========================
-
         self.x = 500
         self.y = 360
-
-        # =========================
-        # HITBOX
-        # =========================
 
         self.rect = pygame.Rect(
             self.x + 20,
@@ -57,29 +45,13 @@ class Player:
             60
         )
 
-        # =========================
-        # MOVIMENTO
-        # =========================
-
         self.speed = 0.3
-
-        # =========================
-        # GRAVIDADE
-        # =========================
 
         self.velocity_y = 0
 
         self.gravity = 0.8
 
-        # =========================
-        # PULO
-        # =========================
-
         self.jump_force = -15
-
-        # =========================
-        # CHÃO
-        # =========================
 
         self.ground_y = 360
 
@@ -139,5 +111,4 @@ class Player:
 
         window.blit(self.image, (self.x, self.y))
 
-        # debug
         # pygame.draw.rect(window, (255,0,0), self.rect, 2)

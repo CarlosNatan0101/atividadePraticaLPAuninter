@@ -44,9 +44,8 @@ class Menu:
             (255, 255, 255)
         )
 
-        # música
-        pygame.mixer.music.load('./asset/natureambientsound.wav')
-        pygame.mixer.music.play(-1)
+        #pygame.mixer.music.load('./asset/natureambientsound.wav')
+        #pygame.mixer.music.play(-1)
 
     def run(self):
 

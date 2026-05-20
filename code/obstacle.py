@@ -7,11 +7,6 @@ from code.const import WIN_WIDTH
 class Obstacle:
 
     def __init__(self):
-
-        # =========================
-        # OBSTÁCULOS
-        # =========================
-
         self.obstacles_data = [
 
             {
@@ -54,10 +49,6 @@ class Obstacle:
             }
         ]
 
-        # =========================
-        # ESCOLHER PRIMEIRO
-        # =========================
-
         current = random.choice(self.obstacles_data)
 
         self.image = current["image"]
@@ -66,21 +57,9 @@ class Obstacle:
 
         self.hitbox = current["hitbox"]
 
-        # =========================
-        # POSIÇÃO
-        # =========================
-
         self.x = WIN_WIDTH + 200
 
-        # =========================
-        # VELOCIDADE
-        # =========================
-
         self.speed = 6
-
-        # =========================
-        # HITBOX
-        # =========================
 
         self.rect = pygame.Rect(
 
@@ -95,23 +74,11 @@ class Obstacle:
 
     def move(self, move_speed):
 
-        # =========================
-        # MOVIMENTO
-        # =========================
-
         self.x -= move_speed
-
-        # =========================
-        # ATUALIZAR HITBOX
-        # =========================
 
         self.rect.x = self.x + self.hitbox[0]
 
         self.rect.y = self.y + self.hitbox[1]
-
-        # =========================
-        # RESETAR OBSTÁCULO
-        # =========================
 
         if self.x < -150:
 

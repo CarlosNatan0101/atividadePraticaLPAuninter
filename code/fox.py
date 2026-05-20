@@ -5,10 +5,6 @@ class Fox:
 
     def __init__(self):
 
-        # =========================
-        # ANIMAÇÃO
-        # =========================
-
         self.frames = [
 
             pygame.transform.scale(
@@ -32,22 +28,10 @@ class Fox:
 
         self.image = self.frames[self.current_frame]
 
-        # =========================
-        # POSIÇÃO
-        # =========================
-
         self.x = -120
         self.y = 340
 
-        # =========================
-        # VELOCIDADE
-        # =========================
-
         self.speed = 0.1
-
-        # =========================
-        # HITBOX
-        # =========================
 
         self.rect = pygame.Rect(
             self.x + 25,
@@ -80,5 +64,4 @@ class Fox:
 
         window.blit(self.image, (self.x, self.y))
 
-        # debug hitbox
         # pygame.draw.rect(window, (255, 0, 0), self.rect, 2)
